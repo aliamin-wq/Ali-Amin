@@ -1,0 +1,44 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: 'Cairo', 'Tajawal', system-ui, -apple-system, sans-serif;
+  --font-serif: 'Amiri', serif;
+  --font-mono: 'Plus Jakarta Sans', monospace;
+}
+
+body {
+  font-family: var(--font-sans);
+}
+
+/* Custom styling for print card */
+@media print {
+  body {
+    background: #ffffff !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .printable-card-container {
+    padding: 0 !important;
+    margin: 0 !important;
+    background: transparent !important;
+  }
+  .printable-card {
+    box-shadow: none !important;
+    border: 1px solid #e2e8f0 !important;
+    page-break-inside: avoid;
+    max-width: 100% !important;
+    margin: auto !important;
+  }
+}
+
+@keyframes scan-laser {
+  0% { transform: translateY(0%); opacity: 0.2; }
+  50% { opacity: 1; }
+  100% { transform: translateY(260px); opacity: 0.2; }
+}
+
+.animate-scanner-line {
+  animation: scan-laser 2.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Smart Invitation & Gatekeeper Access Control",
+  "description": "نظام كروت الدعوة الذكية بالباركود والـ QR مع محطة الحارس لضبط سعة الضيوف ومنع التجاوز",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
